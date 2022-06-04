@@ -5,16 +5,29 @@ import { StyledContainer } from "./components/styles/Container.styled";
 import AppRouter from "./router";
 import Header from "./components/Header";
 
+import GlobalStyles from "./components/styles/Global";
+
 // Rating: 4.9 · ‎1,991 votes
+
+const theme = {
+  colors: {
+    header: "#ebfbff",
+    body: "#fff",
+    footer: "#003333",
+  },
+};
 
 function App() {
   return (
     <Router>
-      <Header />
-      <StyledContainer>
-        <AppRouter />
-      </StyledContainer>
-      <footer>Footer</footer>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Header />
+        <StyledContainer>
+          <AppRouter />
+        </StyledContainer>
+        <footer>Footer</footer>
+      </ThemeProvider>
     </Router>
   );
 }
