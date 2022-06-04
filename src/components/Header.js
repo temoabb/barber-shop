@@ -1,0 +1,19 @@
+import { StyledContainer } from "./styles/Container.styled";
+import { StyledHeader, StyledNav } from "./styles/Header.styled";
+
+const Header = () => {
+  return (
+    <StyledHeader>
+      <StyledContainer>
+        <StyledNav>
+          <h1>BarberShop</h1>
+          <div>
+            <button>Click me</button>
+          </div>
+        </StyledNav>
+      </StyledContainer>
+    </StyledHeader>
+  );
+};
+
+export default Header;

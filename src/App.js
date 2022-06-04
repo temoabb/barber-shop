@@ -9,7 +9,7 @@ function App() {
       <header>Header</header>
       <main>
         <h1>
-          <img style={{ width: 150, height: 150 }} src={logo} alt="" />
+          <img style={{ width: 100, height:  }} src={logo} alt="" />
         </h1>
         {/* <div className="App">
           <i style={{ color: "yellow" }} className="fa-solid fa-star"></i>
