@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  background-color: ${({ theme, bg }) => theme.colors.header}; // #ebfbff
   padding: 40px 0;
+  border: 1px solid green;
 `;
 
 export const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 
   @media (max-width: ${({ theme }) => theme.mobile}) {
     flex-direction: column;

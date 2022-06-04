@@ -1,31 +1,32 @@
 import { BrowserRouter as Router } from "react-router-dom";
-import AppRouter from "./router";
+import { ThemeProvider } from "styled-components";
+import { StyledContainer } from "./components/styles/Container.styled";
 
-import logo from "./utils/images/barber-logo.png";
+import AppRouter from "./router";
+import Header from "./components/Header";
+
+// Rating: 4.9 · ‎1,991 votes
 
 function App() {
   return (
     <Router>
-      <header>Header</header>
-      <main>
-        <h1>
-          <img style={{ width: 100, height:  }} src={logo} alt="" />
-        </h1>
-        {/* <div className="App">
-          <i style={{ color: "yellow" }} className="fa-solid fa-star"></i>
-          <i
-            style={{ color: "yellow" }}
-            className="fa-solid fa-star-half-stroke"
-          ></i>
-          <i style={{ color: "#EDF5FC" }} className="fa-solid fa-star"></i>
-          barber-shop
-        </div> */}
-
+      <Header />
+      <StyledContainer>
         <AppRouter />
-      </main>
+      </StyledContainer>
       <footer>Footer</footer>
     </Router>
   );
 }
 
 export default App;
+
+//  {/* <div className="App">
+//         <i style={{ color: "yellow" }} className="fa-solid fa-star"></i>
+//         <i
+//           style={{ color: "yellow" }}
+//           className="fa-solid fa-star-half-stroke"
+//         ></i>
+//         <i style={{ color: "#EDF5FC" }} className="fa-solid fa-star"></i>
+//         barber-shop
+//       </div> */}

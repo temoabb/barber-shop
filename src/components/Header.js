@@ -1,6 +1,8 @@
 import { StyledContainer } from "./styles/Container.styled";
 import { StyledHeader, StyledNav } from "./styles/Header.styled";
 
+import { StyledButton } from "./styles/Button.styled";
+
 const Header = () => {
   return (
     <StyledHeader>
@@ -8,7 +10,7 @@ const Header = () => {
         <StyledNav>
           <h1>BarberShop</h1>
           <div>
-            <button>Click me</button>
+            <StyledButton>Log In</StyledButton>
           </div>
         </StyledNav>
       </StyledContainer>
