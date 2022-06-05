@@ -4,6 +4,7 @@ import HomePage from "./pages/Home.page";
 import BarbersList from "./pages/BarbersList.page";
 import BarberDetails from "./pages/BarberDetails.page";
 import MyBookings from "./pages/MyBookings.page";
+import Register from "./pages/Register.page";
 
 const routes = [
   {
@@ -25,6 +26,11 @@ const routes = [
     id: 4,
     path: "/my-bookings",
     element: <MyBookings />,
+  },
+  {
+    id: 5,
+    path: "/register",
+    element: <Register />,
   },
 ];
 
