@@ -3,28 +3,50 @@
     {
       "id": 1,
       "firstname": "Barber",
-      "surname": "Barberovich",
+      "lastname": "Barberovich",
       "phone": 598111111,
       "address": "Z. Paliashvili 43 tbilisi, 0179",
       "hours": "09:00 - 18:00",
       "email": "barberovich@gmail.com",
       "price": 30,
-      "currency": "GEL",
       "review": 4.8,
       "reviewamount": 123
     },
     {
       "id": 2,
       "firstname": "Barber",
-      "surname": "Barberovich",
+      "lastname": "Barberovich",
       "phone": 598111111,
       "address": "Z. Paliashvili 43 tbilisi, 0179",
       "hours": "09:00 - 18:00",
       "email": "barberovich@gmail.com",
       "price": 30,
-      "currency": "GEL",
       "review": 4.8,
       "reviewamount": 123
+    },
+    {
+      "review": 0,
+      "reviewamount": 0,
+      "email": "tanjeks@gmail.com",
+      "password": "123",
+      "confirmpassword": "123",
+      "firstname": "Tanjeks",
+      "lastname": "Tanjeksovich",
+      "address": "Tchuatura",
+      "price": "30",
+      "id": 3
+    },
+    {
+      "review": 0,
+      "reviewamount": 0,
+      "email": "dsadas@dfsfd.com",
+      "password": "123",
+      "confirmpassword": "123",
+      "firstname": "Dasd",
+      "lastname": "sadasd",
+      "address": "adad",
+      "price": "123",
+      "id": 4
     }
   ],
   "clients": [

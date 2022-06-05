@@ -1,12 +1,5 @@
-import { useState } from "react";
-
-import { useForm } from "react-hook-form";
 import { StyledButton } from "../components/styles/Button.styled";
-
-import {
-  CLIENT_REGISTRATION_ATRRIBUTES,
-  BARBER_REGISTRATION_ATTRIBUTES,
-} from "../static/registrationAttributes";
+import { useRegister } from "../hooks/useHttp";
 
 import {
   StyledForm,
@@ -16,21 +9,19 @@ import {
   Switch,
 } from "../components/styles/Form.styled";
 
-const isValid = (str) => str.trim();
-
 const Register = () => {
-  console.log("Register");
+  console.log("RegisterPage");
 
   const {
+    submitHandler,
+    handleRoleChange,
+    isBarber,
     register,
     handleSubmit,
-    getValues,
-
-    setError,
-    formState: { errors },
-  } = useForm();
-
-  const [isBarber, setIsBarber] = useState(false);
+    errors,
+    BARBER_REGISTRATION_ATTRIBUTES,
+    CLIENT_REGISTRATION_ATRRIBUTES,
+  } = useRegister();
 
   const callback = ({ label, type }) => {
     const registerId = label.split(" ").join("").toLowerCase();
@@ -54,38 +45,6 @@ const Register = () => {
     ? BARBER_REGISTRATION_ATTRIBUTES.map(callback)
     : CLIENT_REGISTRATION_ATRRIBUTES.map(callback);
 
-  const submitHandler = () => {
-    const allValues = getValues();
-
-    console.log(allValues);
-    if (allValues.password !== allValues.confirmpassword) {
-      setError("confirmpassword", { message: "Passwords DON'T match" });
-      return;
-    }
-
-    console.log("Passwords match");
-
-    const gatheredData = {};
-
-    for (const value of Object.keys(allValues)) {
-      // ["firstname", "lastname", "password" ...]
-      const enteredValue = allValues[value];
-      const trimmedValue = isValid(enteredValue);
-
-      if (!trimmedValue) {
-        console.log("Typed value is NOT valid: ", value);
-        setError(value, { message: "Empty field is not valid" });
-        return;
-      } else {
-        gatheredData[value] = trimmedValue;
-      }
-    }
-
-    console.log("Gathered", gatheredData);
-  };
-
-  const handleRoleChange = () => setIsBarber((prev) => !prev);
-
   const icon = (
     <>
       {isBarber ? "Barber" : "Client"} registration{" "}
@@ -96,7 +55,8 @@ const Register = () => {
     </>
   );
 
-  console.log(errors);
+  console.log("errors", errors);
+
   return (
     <>
       <StyledForm key={isBarber} onSubmit={handleSubmit(submitHandler)}>
