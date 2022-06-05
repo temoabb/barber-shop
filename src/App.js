@@ -15,6 +15,7 @@ const theme = {
     body: "#fff",
     footer: "#003333",
   },
+  mobile: "576px",
 };
 
 function App() {

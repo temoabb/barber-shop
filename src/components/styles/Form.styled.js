@@ -3,22 +3,46 @@ import styled from "styled-components";
 export const StyledForm = styled.form`
   padding: 30px;
   border-radius: 15px;
-  width: 60%;
+  width: 70%;
   margin: 20px auto;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  text-align: center;
+  animation: slide-down 300ms ease-out forwards;
+
+  @media (max-width: 750px) {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  @keyframes slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-3rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 export const StyledFormControl = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 10px 0;
-  padding: 10px 0;
+  margin-bottom: 18px;
 `;
+
 export const StyledInput = styled.input`
-  border: none;
   outline: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
   padding: 10px;
+  font-size: 18px;
+`;
+
+export const StyledLabel = styled.label`
+  /* font-style: italic; */
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
 `;
