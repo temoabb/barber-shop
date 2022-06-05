@@ -18,6 +18,8 @@ const theme = {
   mobile: "576px",
 };
 
+// "#ff0099"
+
 function App() {
   return (
     <Router>

@@ -61,3 +61,20 @@ export const StyledLabel = styled.label`
   font-size: 14px;
   font-weight: bold;
 `;
+
+export const Switch = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  background-color: "red";
+  margin-bottom: 40px;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.15); */
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    & > button {
+      margin-top: 30px;
+    }
+  }
+`;

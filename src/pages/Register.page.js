@@ -13,6 +13,7 @@ import {
   StyledInput,
   StyledFormControl,
   StyledLabel,
+  Switch,
 } from "../components/styles/Form.styled";
 
 const isValid = (str) => str.trim();
@@ -26,7 +27,7 @@ const Register = () => {
     getValues,
 
     setError,
-    formState: { password, confirmpassword, errors },
+    formState: { errors },
   } = useForm();
 
   const [isBarber, setIsBarber] = useState(false);
@@ -85,14 +86,27 @@ const Register = () => {
 
   const handleRoleChange = () => setIsBarber((prev) => !prev);
 
+  const icon = (
+    <>
+      {isBarber ? "Barber" : "Client"} registration{" "}
+      <i
+        style={{ color: "#ff0099" }}
+        className={`fa-solid ${isBarber ? "fa-scissors" : "fa-user-tie"}`}
+      ></i>
+    </>
+  );
+
   console.log(errors);
   return (
     <>
-      <StyledButton onClick={handleRoleChange}>
-        Register as a {isBarber ? "client" : "barber"}
-      </StyledButton>
       <StyledForm key={isBarber} onSubmit={handleSubmit(submitHandler)}>
-        <h2>{isBarber ? "Barber" : "Client"} Registration</h2>
+        <Switch>
+          <h2>{icon}</h2>
+          <StyledButton type="button" bg="#ebfbff" onClick={handleRoleChange}>
+            Register as a {isBarber ? "client" : "barber"}
+          </StyledButton>
+        </Switch>
+
         {renderedInputs}
         <StyledButton bg="#90EE90" type="submit">
           REGISTER
