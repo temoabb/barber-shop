@@ -4,7 +4,6 @@
       "id": 1,
       "firstname": "Barber",
       "lastname": "Barberovich",
-      "phone": 598111111,
       "address": "Z. Paliashvili 43 tbilisi, 0179",
       "hours": "09:00 - 18:00",
       "email": "barberovich@gmail.com",
@@ -16,7 +15,6 @@
       "id": 2,
       "firstname": "Barber",
       "lastname": "Barberovich",
-      "phone": 598111111,
       "address": "Z. Paliashvili 43 tbilisi, 0179",
       "hours": "09:00 - 18:00",
       "email": "barberovich@gmail.com",
@@ -29,7 +27,6 @@
       "reviewamount": 0,
       "email": "tanjeks@gmail.com",
       "password": "123",
-      "confirmpassword": "123",
       "firstname": "Tanjeks",
       "lastname": "Tanjeksovich",
       "address": "Tchuatura",
@@ -41,19 +38,40 @@
       "reviewamount": 0,
       "email": "dsadas@dfsfd.com",
       "password": "123",
-      "confirmpassword": "123",
       "firstname": "Dasd",
       "lastname": "sadasd",
       "address": "adad",
       "price": "123",
       "id": 4
+    },
+    {
+      "review": 0,
+      "reviewamount": 0,
+      "email": "tanjeks@gmail.com",
+      "password": "123",
+      "firstname": "dasda",
+      "lastname": "adasdsa",
+      "address": "sdada",
+      "price": "12",
+      "id": 5
     }
   ],
   "clients": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "email": "dummy@gmail.com",
+      "password": "123"
+    },
+    {
+      "email": "abesadzetemo1997@gmail.com",
+      "password": "123123",
+      "confirmpassword": "123123",
+      "id": 2
+    },
+    {
+      "email": "dsadas@gmail.com",
+      "password": "123",
+      "id": 3
     }
   ]
 }

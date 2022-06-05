@@ -1,13 +1,7 @@
 import { StyledButton } from "../components/styles/Button.styled";
 import { useRegister } from "../hooks/useHttp";
 
-import {
-  StyledForm,
-  StyledInput,
-  StyledFormControl,
-  StyledLabel,
-  Switch,
-} from "../components/styles/Form.styled";
+import { StyledForm, StyledInput, StyledFormControl, StyledLabel, Switch, } from "../components/styles/Form.styled";
 
 const Register = () => {
   console.log("RegisterPage");
@@ -55,8 +49,6 @@ const Register = () => {
     </>
   );
 
-  console.log("errors", errors);
-
   return (
     <>
       <StyledForm key={isBarber} onSubmit={handleSubmit(submitHandler)}>
@@ -66,7 +58,6 @@ const Register = () => {
             Register as a {isBarber ? "client" : "barber"}
           </StyledButton>
         </Switch>
-
         {renderedInputs}
         <StyledButton bg="#90EE90" type="submit">
           REGISTER

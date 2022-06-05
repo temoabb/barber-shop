@@ -30,27 +30,21 @@ export const useRegister = () => {
 
   const submitHandler = () => {
     const allValues = getValues();
-    console.log("entered values object", allValues);
 
     if (allValues.password !== allValues.confirmpassword) {
       setError("confirmpassword", { message: "Passwords DON'T match" });
       return;
     }
 
-    console.log("Passwords MATCH!");
-
     const gatheredData = {
-      review: 0,
-      reviewamount: 0,
+      ...(isBarber ? { review: 0, reviewamount: 0 } : "")
     };
 
     for (const value of Object.keys(allValues)) {
-      // ["firstname", "lastname", "password" ...]
       const enteredValue = allValues[value];
       const trimmedValue = isValid(enteredValue);
 
       if (!trimmedValue) {
-        console.log(`${value} is NOT valid`);
         setError(value, { message: "Empty field is not valid" });
         return;
       } else {
@@ -58,13 +52,14 @@ export const useRegister = () => {
       }
     }
 
+    delete gatheredData.confirmpassword;
+
     const registerBarber = async () => {
       try {
-        const response = await axios.post(
+        await axios.post(
           `${BASE_URL}/${isBarber ? "barbers" : "clients"}`,
           gatheredData
         );
-        console.log(response.data);
         navigate("/barbers");
       } catch (error) {
         console.error(error);
