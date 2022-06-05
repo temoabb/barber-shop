@@ -12,6 +12,19 @@
       "currency": "GEL",
       "review": 4.8,
       "reviewAmount": 123
+    },
+    {
+      "id": 2,
+      "firstname": "Barber",
+      "surname": "Barberovich",
+      "phone": 598111111,
+      "address": "Z. Paliashvili 43 tbilisi, 0179",
+      "hours": "09:00 - 18:00",
+      "email": "barberovich@gmail.com",
+      "price": 30,
+      "currency": "GEL",
+      "review": 4.8,
+      "reviewAmount": 123
     }
   ],
   "clients": [
