@@ -11,7 +11,7 @@
       "price": 30,
       "currency": "GEL",
       "review": 4.8,
-      "reviewAmount": 123
+      "reviewamount": 123
     },
     {
       "id": 2,
@@ -24,7 +24,7 @@
       "price": 30,
       "currency": "GEL",
       "review": 4.8,
-      "reviewAmount": 123
+      "reviewamount": 123
     }
   ],
   "clients": [

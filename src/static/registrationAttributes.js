@@ -15,7 +15,7 @@ export const CLIENT_REGISTRATION_ATRRIBUTES = [
 export const BARBER_REGISTRATION_ATTRIBUTES = [
   { label: "First Name" },
   { label: "Last Name" },
-  { label: "Email" },
+  { label: "Email", type: "email" },
   { label: "Address" },
   { label: "Price", type: "number" },
   { label: "Password", type: "password" },

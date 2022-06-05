@@ -8,6 +8,16 @@ export const StyledForm = styled.form`
   border: 1px solid rgba(0, 0, 0, 0.15);
   animation: slide-down 300ms ease-out forwards;
 
+  & > button {
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  & > h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
   @media (max-width: 750px) {
     margin: 10px 0;
     width: 100%;

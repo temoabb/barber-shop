@@ -39,7 +39,7 @@ const BarbersList = () => {
           price,
           currency,
           review,
-          reviewAmount,
+          reviewamount,
         }) => {
           return (
             <StyledBarberCard key={id}>
