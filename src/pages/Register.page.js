@@ -26,29 +26,30 @@ const Register = () => {
 
   const [isBarber, setIsBarber] = useState(false);
 
-  const callBack = ({ label, type }) => (
-    <StyledFormControl key={label}>
-      {console.log(label.split(" ").join(""))}
-      <StyledLabel htmlFor={label}>{label}</StyledLabel>
-      <StyledInput
-        {...register(`${label.split(" ").join("")}`, {
-          required: true,
-          maxLength: 5,
-        })}
-        id={label}
-        type={type ? type : "text"}
-      />
-    </StyledFormControl>
-  );
+  const callBack = ({ label, type }) => {
+    const registerId = label.split(" ").join("");
+    return (
+      <StyledFormControl key={label}>
+        <StyledLabel htmlFor={label}>{label}</StyledLabel>
+        <StyledInput
+          {...register(registerId, { required: true })}
+          id={registerId}
+          type={type ? type : "text"}
+        />
+        <small>{errors[registerId] ? `${label} is required` : ""}</small>
+      </StyledFormControl>
+    );
+  };
 
   const renderedInputs = isBarber
     ? BARBER_REGISTRATION_ATTRIBUTES.map(callBack)
     : CLIENT_REGISTRATION_ATRRIBUTES.map(callBack);
 
-  const submitHandler = (e) => {
-    e.preventDefault();
+  const submitHandler = () => {
     console.log("Submit");
   };
+
+  console.log(errors);
 
   return (
     <>
@@ -56,7 +57,9 @@ const Register = () => {
         Register as a {isBarber ? "client" : "barber"}
       </StyledButton>
       <StyledForm key={isBarber} onSubmit={handleSubmit(submitHandler)}>
-        <h2>{isBarber ? "Barber" : "Client"} Registration</h2>
+        <h2 style={{ textAlign: "center", marginBottom: 10 }}>
+          {isBarber ? "Barber" : "Client"} Registration
+        </h2>
 
         {renderedInputs}
 

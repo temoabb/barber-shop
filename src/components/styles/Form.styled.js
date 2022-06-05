@@ -30,6 +30,11 @@ export const StyledFormControl = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-bottom: 18px;
+  font-weight: bold;
+
+  & > small {
+    color: red;
+  }
 `;
 
 export const StyledInput = styled.input`
