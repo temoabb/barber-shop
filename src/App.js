@@ -7,6 +7,8 @@ import Header from "./components/Header";
 
 import GlobalStyles from "./components/styles/Global";
 
+import ContextProvider from "./store/Context";
+
 // Rating: 4.9 · ‎1,991 votes
 
 const theme = {
@@ -23,14 +25,16 @@ const theme = {
 function App() {
   return (
     <Router>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Header />
-        <StyledContainer>
-          <AppRouter />
-        </StyledContainer>
-        <footer>Footer</footer>
-      </ThemeProvider>
+      <ContextProvider>
+        <ThemeProvider theme={theme}>
+          <GlobalStyles />
+          <Header />
+          <StyledContainer>
+            <AppRouter />
+          </StyledContainer>
+          <footer>Footer</footer>
+        </ThemeProvider>
+      </ContextProvider>
     </Router>
   );
 }

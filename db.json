@@ -54,6 +54,28 @@
       "address": "sdada",
       "price": "12",
       "id": 5
+    },
+    {
+      "review": 0,
+      "reviewamount": 0,
+      "email": "tanjeks@gmail.com",
+      "password": "123",
+      "firstname": "Tanjeks",
+      "lastname": "Tanjeksidze",
+      "address": "dsadasdsa",
+      "price": "23",
+      "id": 6
+    },
+    {
+      "review": 0,
+      "reviewamount": 0,
+      "email": "giorgi@gmail.com121",
+      "password": "123",
+      "firstname": "Vileni",
+      "lastname": "21",
+      "address": "dsads",
+      "price": "12",
+      "id": 7
     }
   ],
   "clients": [
@@ -72,6 +94,11 @@
       "email": "dsadas@gmail.com",
       "password": "123",
       "id": 3
+    },
+    {
+      "email": "abesadzetemo1997@gmail.com",
+      "password": "123",
+      "id": 4
     }
   ]
 }

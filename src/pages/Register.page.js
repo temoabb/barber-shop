@@ -1,7 +1,14 @@
-import { StyledButton } from "../components/styles/Button.styled";
+import { Link } from 'react-router-dom';
 import { useRegister } from "../hooks/useHttp";
+import { StyledButton } from "../components/styles/Button.styled";
 
-import { StyledForm, StyledInput, StyledFormControl, StyledLabel, Switch, } from "../components/styles/Form.styled";
+import {
+  StyledForm,
+  StyledInput,
+  StyledFormControl,
+  StyledLabel,
+  Switch
+} from "../components/styles/Form.styled";
 
 const Register = () => {
   console.log("RegisterPage");
@@ -59,6 +66,7 @@ const Register = () => {
           </StyledButton>
         </Switch>
         {renderedInputs}
+        <small>Already have an account? <Link to="/login">Login</Link></small>
         <StyledButton bg="#90EE90" type="submit">
           REGISTER
         </StyledButton>
