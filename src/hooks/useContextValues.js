@@ -1,16 +1,17 @@
 import { useContext } from "react";
-import { Context } from "../store/Context"
+import { Context } from "../store/Context";
 
 const useContextValues = () => {
-  const { email, loggedIn, activateUser } = useContext(Context);
+  const { email, loggedIn, activateUser, fetchedBarbers, setFetchedBarbers } =
+    useContext(Context);
 
   return {
     email,
     loggedIn,
-    activateUser
-  }
-
+    activateUser,
+    fetchedBarbers,
+    setFetchedBarbers,
+  };
 };
-
 
 export default useContextValues;

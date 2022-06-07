@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import useContextValues from "../hooks/useContextValues";
 
 import { useNavigate } from "react-router-dom";
-
-// import { StyledModal } from "../components/styles/Modal.styled";
-import Modal from "../components/Modal";
 
 import BarberCard from "../components/BarberCard";
 
@@ -17,14 +14,12 @@ const API_URL = "http://localhost:5000/barbers";
 const BarbersList = () => {
   console.log("BarbersList");
 
-  const { loggedIn } = useContextValues();
-
-  const [showModal, setShowModal] = useState("");
-  const [barbers, setBarbers] = React.useState([]);
+  const [barbers, setBarbers] = useState([]);
+  console.log(barbers);
 
   const navigate = useNavigate();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchBarbers = async () => {
       try {
         const response = await axios.get(API_URL);
@@ -37,35 +32,24 @@ const BarbersList = () => {
     return () => console.log("Cancel axios requiest");
   }, []);
 
-  const modal = showModal ? (
-    <Modal>
-      <img src="" alt="" />
-      <div>
-        <h1>
-          {} {}
-        </h1>
-      </div>
-    </Modal>
-  ) : (
-    ""
-  );
-
-  const handleReserveVisit = (visitData) => {
-    if (!loggedIn) {
-      console.log("Firstly you have to login to reserve your visit");
-      navigate("/login");
-    } else {
-      setShowModal({ barberData: visitData });
-    }
-  };
-
   const renderedBarbers = barbers.map((barber) => (
-    <BarberCard {...barber} onReserveVisit={handleReserveVisit} />
+    <BarberCard
+      key={barber.id}
+      id={barber.id}
+      firstname={barber.firstname}
+      lastname={barber.lastname}
+      review={barber.review}
+      price={barber.price}
+      reviewamount={barber.reviewamount}
+      onClick={() => navigate(`/barbers/${barber.id}`)}
+    />
   ));
 
   return (
     <>
-      {modal}
+      <h2 style={{ textAlign: "center", marginTop: "30px" }}>
+        Available Barbers
+      </h2>
       {renderedBarbers}
     </>
   );

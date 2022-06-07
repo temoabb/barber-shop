@@ -1,32 +1,32 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
 export const Context = createContext({
   email: String,
   loggedIn: Boolean,
-  activateUser: () => { }
+  activateUser: () => {},
 });
 
-const initState = {
-  loggedIn: false,
-  email: "",
+const initState = () => {
+  return localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
+    : {
+        loggedIn: false,
+        email: "",
+      };
 };
 
 const ContextProvider = ({ children }) => {
-  const [activateLoginStatus, setActivateLoginStatus] = React.useState(localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : initState);
+  const [activateLoginStatus, setActivateLoginStatus] = useState(initState());
 
   const activateUser = (data) => setActivateLoginStatus(data);
 
   const contextValues = {
     loggedIn: activateLoginStatus.loggedIn,
     email: activateLoginStatus.email,
-    activateUser
+    activateUser,
   };
 
-  return (
-    <Context.Provider value={contextValues}>
-      {children}
-    </Context.Provider>
-  )
+  return <Context.Provider value={contextValues}>{children}</Context.Provider>;
 };
 
 export default ContextProvider;

@@ -18,6 +18,10 @@ const GlobalStyles = createGlobalStyle`
     /* opacity: 0.6; */
     /* line-height: 1.5; */
   }
+  
+  a {
+    text-decoration: none;
+  }
 
   img {
     max-width: 100%;
