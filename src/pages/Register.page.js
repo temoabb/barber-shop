@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { useRegister } from "../hooks/useHttp";
 import { StyledButton } from "../components/styles/Button.styled";
 
@@ -7,11 +7,17 @@ import {
   StyledInput,
   StyledFormControl,
   StyledLabel,
-  Switch
+  Switch,
 } from "../components/styles/Form.styled";
+
+import { Navigate } from "react-router-dom";
+
+import useContextValues from "../hooks/useContextValues";
 
 const Register = () => {
   console.log("RegisterPage");
+
+  const { loggedIn } = useContextValues();
 
   const {
     submitHandler,
@@ -56,6 +62,10 @@ const Register = () => {
     </>
   );
 
+  if (loggedIn) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <>
       <StyledForm key={isBarber} onSubmit={handleSubmit(submitHandler)}>
@@ -66,7 +76,9 @@ const Register = () => {
           </StyledButton>
         </Switch>
         {renderedInputs}
-        <small>Already have an account? <Link to="/login">Login</Link></small>
+        <small>
+          Already have an account? <Link to="/login">Login</Link>
+        </small>
         <StyledButton bg="#90EE90" type="submit">
           REGISTER
         </StyledButton>

@@ -22,7 +22,6 @@ const BarberCard = (props) => {
   } = props;
 
   const location = useLocation();
-  console.log(location);
 
   return (
     <StyledBarberCard key={id} direction={id % 2 === 0 ? "row-reverse" : ""}>
@@ -30,7 +29,9 @@ const BarberCard = (props) => {
       <div>
         <h2>
           <Link
-            // onClick={(e) => e.preventDefault()}
+            onClick={(e) =>
+              location.pathname.split("/").length > 2 && e.preventDefault()
+            }
             to={`/barbers/${id}`}
           >{`${firstname} ${lastname}`}</Link>
         </h2>

@@ -3,20 +3,35 @@ import { StyledHeader, StyledNav } from "./styles/Header.styled";
 
 import { StyledButton } from "./styles/Button.styled";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
+import useContextValues from "../hooks/useContextValues";
 
 const Header = () => {
   const navigate = useNavigate();
 
-  const toBarbers = () => navigate("/login");
+  const { loggedIn, email, logOut } = useContextValues();
+
+  const authenticateClient = () => {
+    if (loggedIn) {
+      logOut();
+    } else {
+      navigate("/login");
+    }
+  };
 
   return (
     <StyledHeader>
       <StyledContainer>
         <StyledNav>
-          <h1>BarberShop</h1>
+          <h1>
+            <Link to="/">BarberShop</Link>
+          </h1>
           <div>
-            <StyledButton onClick={toBarbers}>Log In</StyledButton>
+            {email && <small>{email}</small>}
+            <StyledButton onClick={authenticateClient}>
+              {loggedIn ? "Log Out" : "Log In"}
+            </StyledButton>
           </div>
         </StyledNav>
       </StyledContainer>

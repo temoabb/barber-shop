@@ -12,8 +12,25 @@ export const StyledNav = styled.nav`
   justify-content: space-between;
   /* margin-bottom: 40px; */
 
-  @media (max-width: ${({ theme }) => theme.mobile}) {
+  & > div {
+    display: flex;
+    align-items: center;
+  }
+
+  & small {
+    margin-right: 10px;
+  }
+
+  @media (max-width: 632px) {
     flex-direction: column;
+    & > div {
+      flex-direction: column;
+      margin-top: 10px;
+    }
+
+    & small {
+      margin-bottom: 20px;
+    }
   }
 `;
 
