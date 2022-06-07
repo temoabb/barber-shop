@@ -8,7 +8,8 @@ import { useNavigate } from "react-router-dom";
 const Header = () => {
   const navigate = useNavigate();
 
-  const toBarbers = () => navigate("/barbers");
+  const toBarbers = () => navigate("/login");
+
   return (
     <StyledHeader>
       <StyledContainer>

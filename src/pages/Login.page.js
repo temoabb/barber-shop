@@ -18,7 +18,6 @@ const Login = () => {
   const context = useContext(Context);
   const { register, errors, handleSubmit, submitHandler } = useLogin();
 
-  console.log(context)
   if (context.loggedIn) {
     return <Navigate to="/" />
   };
