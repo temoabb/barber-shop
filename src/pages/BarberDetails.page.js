@@ -14,18 +14,21 @@ import {
   StyledModalForm,
   StyledVisitHeading,
 } from "../components/styles/Modal.styled";
+
 import {
   StyledLabel,
   StyledFormControl,
 } from "../components/styles/Form.styled";
+
 import { StyledButton } from "../components/styles/Button.styled";
 
-const API_URL = "http://localhost:5000/barbers";
+const BARBERS_API_URL = "http://localhost:5000/barbers";
+const BOOKINGS_API_URL = "http://localhost:5000/bookings";
 
 const BarberDetails = () => {
   console.log("BarberDetails");
 
-  const { loggedIn } = useContextValues();
+  const { loggedIn, email: clientEmail } = useContextValues();
 
   const {
     register,
@@ -40,12 +43,13 @@ const BarberDetails = () => {
 
   const [barber, setBarber] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [successfulBooking, setSuccessfulBooking] = useState(false);
 
   useEffect(() => {
     console.log("BarberDetails useEffect");
     const fetchBarber = async () => {
       try {
-        const response = await axios.get(API_URL + `/${params.id}`);
+        const response = await axios.get(BARBERS_API_URL + `/${params.id}`);
         setBarber(response.data);
       } catch (error) {
         console.error(error);
@@ -56,12 +60,38 @@ const BarberDetails = () => {
     return () => console.log("Cancel axios request BarberDetails");
   }, [params.id]);
 
-  console.log(showModal);
-  const submitHandler = () => {};
+  const submitHandler = () => {
+    const values = getValues();
+    console.log("values", values);
 
-  const handleCloseModal = () => setShowModal(false);
+    const createNewBooking = async () => {
+      try {
+        await axios.post(BOOKINGS_API_URL, {
+          clientEmail,
+          barberEmail: barber.barberEmail,
+          bookingDate: values.visitDay,
+          bookingTime: values.visitTime,
+        });
 
-  const modalHeading = (
+        setSuccessfulBooking(true);
+      } catch (error) {
+        console.error(error);
+        setShowModal(false);
+      }
+    };
+
+    createNewBooking();
+  };
+
+  const handleCloseModal = () => {
+    if (successfulBooking) {
+      navigate("/my-bookings");
+    } else {
+      setShowModal(false);
+    }
+  };
+
+  const bookingModalHeading = (
     <StyledVisitHeading>
       <h2>
         You are reserving a visit to <br />
@@ -75,43 +105,56 @@ const BarberDetails = () => {
     </StyledVisitHeading>
   );
 
+  const registrationForm = (
+    <StyledModalForm onSubmit={handleSubmit(submitHandler)}>
+      {bookingModalHeading}
+      <StyledFormControl>
+        <StyledLabel>Please choose a day</StyledLabel>
+        <input {...register("visitDay", { required: true })} type="date" />
+        {errors.visitDay && <small>You must specify your visit DAY</small>}
+      </StyledFormControl>
+      <StyledFormControl>
+        <StyledLabel>Please choose an appropriate time:</StyledLabel>
+        <input {...register("visitTime", { required: true })} type="time" />
+        {errors.visitTime && <small>You must specify your visit DATE</small>}
+      </StyledFormControl>
+      <section>
+        <StyledButton
+          bg="#ff0099"
+          color="#fff"
+          type="button"
+          onClick={handleCloseModal}
+        >
+          Cancel
+        </StyledButton>
+        <StyledButton color="green" type="submit">
+          Reserve
+        </StyledButton>
+      </section>
+    </StyledModalForm>
+  );
+
+  const successfullyBookedMessage = (
+    <>
+      <h2>Congratulations, Successful booking ^_^</h2>
+      <StyledButton color="#ff0099" onClick={handleCloseModal}>
+        See your bookings
+      </StyledButton>
+    </>
+  );
+
   const modal = showModal ? (
     <Modal onCloseModal={handleCloseModal}>
-      <StyledModalForm onSubmit={handleSubmit(submitHandler)}>
-        {modalHeading}
-        <StyledFormControl>
-          <StyledLabel>Please choose a day</StyledLabel>
-          <input {...register("visitDay", { required: true })} type="date" />
-        </StyledFormControl>
-        <StyledFormControl>
-          <StyledLabel>Please choose an appropriate time:</StyledLabel>
-          <input {...register("visitTime", { required: true })} type="time" />
-        </StyledFormControl>
-        <section>
-          <StyledButton
-            bg="#ff0099"
-            color="#fff"
-            type="button"
-            onClick={handleCloseModal}
-          >
-            Cancel
-          </StyledButton>
-          <StyledButton color="green" type="submit">
-            Reserve
-          </StyledButton>
-        </section>
-      </StyledModalForm>
+      {!successfulBooking ? registrationForm : successfullyBookedMessage}
     </Modal>
   ) : (
     ""
   );
 
-  const handleReserveVisit = () => {
+  const handleArrangeVisit = () => {
     if (!loggedIn) {
-      console.log("Firstly you have to login to reserve your visit");
       navigate("/login");
     } else {
-      console.log("here");
       setShowModal(true);
     }
   };
@@ -119,7 +162,7 @@ const BarberDetails = () => {
   return (
     <>
       {modal}
-      {barber && <BarberCard {...barber} onClick={handleReserveVisit} />}
+      {barber && <BarberCard {...barber} onClick={handleArrangeVisit} />}
     </>
   );
 };

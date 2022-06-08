@@ -1,22 +1,27 @@
 {
   "barbers": [
     {
+      "review": 0,
+      "reviewamount": 0,
+      "email": "tanjeks@gmail.com",
+      "password": "123",
+      "firstname": "dasda",
+      "lastname": "adasdsa",
+      "address": "sdada",
+      "price": "12",
       "id": 1,
-      "firstname": "Barber",
-      "lastname": "Barberovich",
-      "address": "Z. Paliashvili 43 tbilisi, 0179",
-      "hours": "09:00 - 18:00",
-      "email": "barberovich@gmail.com",
-      "price": 30,
-      "review": 4.8,
-      "reviewamount": 123
+      "bookings": [
+        {
+          "id": 1,
+          "firstname": "PS5"
+        }
+      ]
     },
     {
       "id": 2,
       "firstname": "Barber",
       "lastname": "Barberovich",
       "address": "Z. Paliashvili 43 tbilisi, 0179",
-      "hours": "09:00 - 18:00",
       "email": "barberovich@gmail.com",
       "price": 30,
       "review": 4.8,
@@ -110,6 +115,27 @@
       "email": "abesadzetemo1997@gmail.com",
       "password": "123",
       "id": 4
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "clientEmail": "",
+      "barberEmail": "",
+      "bookingDate": "",
+      "bookingTime": ""
+    },
+    {
+      "clientEmail": "dummy@gmail.com",
+      "bookingDate": "2022-06-22",
+      "bookingTime": "17:03",
+      "id": 2
+    },
+    {
+      "clientEmail": "dummy@gmail.com",
+      "bookingDate": "2022-06-07",
+      "bookingTime": "17:11",
+      "id": 3
     }
   ]
 }

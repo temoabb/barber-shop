@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 export const StyledModal = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   position: fixed;
   top: 20vh;
 
@@ -18,10 +22,19 @@ export const StyledModal = styled.div`
     color: #ff0099;
     font-style: italic;
   }
+
   & h3 {
     color: green;
     font-weight: bold;
     margin-top: 10px;
+  }
+
+  & h2 {
+    color: green;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 10px 20px;
   }
 
   @media (max-width: 768px) {
