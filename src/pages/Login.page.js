@@ -1,26 +1,26 @@
-import React, { useContext } from 'react';
-import { Navigate, Link } from 'react-router-dom';
+import React, { useContext } from "react";
+import { Navigate, Link } from "react-router-dom";
 
-import { Context } from '../store/Context';
+import { Context } from "../store/Context";
 
-import { useLogin } from '../hooks/useHttp';
+import { useLogin } from "../hooks/useHttp";
 
 import {
   StyledFormControl,
   StyledLabel,
   StyledInput,
-  StyledForm
-} from '../components/styles/Form.styled';
+  StyledForm,
+} from "../components/styles/Form.styled";
 
-import { StyledButton } from '../components/styles/Button.styled';
+import { StyledButton } from "../components/styles/Button.styled";
 
 const Login = () => {
   const context = useContext(Context);
   const { register, errors, handleSubmit, submitHandler } = useLogin();
 
   if (context.loggedIn) {
-    return <Navigate to="/" />
-  };
+    return <Navigate to="/" />;
+  }
 
   return (
     <StyledForm onSubmit={handleSubmit(submitHandler)}>
@@ -37,22 +37,26 @@ const Login = () => {
         )}
       </StyledFormControl>
       <StyledFormControl>
-        <StyledLabel htmlFor={"password"}>Email</StyledLabel>
+        <StyledLabel htmlFor={"password"}>Password</StyledLabel>
         <StyledInput
           {...register("enteredPassword", { required: true })}
           id="password"
           type="password"
         />
         {errors["enteredPassword"] && (
-          <small>{errors["enteredPassword"].message || `Password is required`}</small>
+          <small>
+            {errors["enteredPassword"].message || `Password is required`}
+          </small>
         )}
       </StyledFormControl>
-      <small>Don't have an account? <Link to="/register">Register now</Link></small>
+      <small>
+        Don't have an account? <Link to="/register">Register now</Link>
+      </small>
       <StyledButton bg="#90EE90" type="submit">
         LOGIN
       </StyledButton>
     </StyledForm>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

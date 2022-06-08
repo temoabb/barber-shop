@@ -41,14 +41,19 @@ const BarberCard = (props) => {
             <i>{address}</i>
           </h4>
         )}
+
         {hours && <small>Working hours: {hours}</small>}
+
         <h3>Price: GEL {price}</h3>
+
         {email && <p>Contact: {email}</p>}
+
         <p>
           Rating: {review}/5 (reviewed by {reviewamount} reviewers)
         </p>
+
         <StyledButton onClick={onClick} bg="#ff0099" color="#fff">
-          {address && hours ? "Reserve now" : "Details"}
+          {address && email ? "Reserve now" : "Details"}
         </StyledButton>
       </div>
     </StyledBarberCard>

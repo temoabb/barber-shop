@@ -76,6 +76,17 @@
       "address": "dsads",
       "price": "12",
       "id": 7
+    },
+    {
+      "review": 0,
+      "reviewamount": 0,
+      "email": "topetchiatura@gmail.com",
+      "password": "topevar",
+      "firstname": "Tope",
+      "lastname": "Var",
+      "address": "Tchiatura brat",
+      "price": "400",
+      "id": 8
     }
   ],
   "clients": [
