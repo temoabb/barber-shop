@@ -119,22 +119,24 @@
   ],
   "bookings": [
     {
-      "id": 1,
-      "clientEmail": "",
-      "barberEmail": "",
-      "bookingDate": "",
-      "bookingTime": ""
+      "clientEmail": "dummy@gmail.com",
+      "barberEmail": "tanjeks@gmail.com",
+      "bookingDate": "2022-06-10",
+      "bookingTime": "20:37",
+      "id": 1
     },
     {
       "clientEmail": "dummy@gmail.com",
-      "bookingDate": "2022-06-22",
-      "bookingTime": "17:03",
+      "barberEmail": "tanjeks@gmail.com",
+      "bookingDate": "2022-06-04",
+      "bookingTime": "20:57",
       "id": 2
     },
     {
       "clientEmail": "dummy@gmail.com",
-      "bookingDate": "2022-06-07",
-      "bookingTime": "17:11",
+      "barberEmail": "dsadas@dfsfd.com",
+      "bookingDate": "2022-06-02",
+      "bookingTime": "21:15",
       "id": 3
     }
   ]

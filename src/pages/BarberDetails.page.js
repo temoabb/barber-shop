@@ -32,7 +32,6 @@ const BarberDetails = () => {
 
   const {
     register,
-    setError,
     handleSubmit,
     getValues,
     formState: { errors },
@@ -68,7 +67,7 @@ const BarberDetails = () => {
       try {
         await axios.post(BOOKINGS_API_URL, {
           clientEmail,
-          barberEmail: barber.barberEmail,
+          barberEmail: barber.email,
           bookingDate: values.visitDay,
           bookingTime: values.visitTime,
         });
