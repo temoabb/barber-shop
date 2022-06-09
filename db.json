@@ -9,13 +9,7 @@
       "lastname": "adasdsa",
       "address": "sdada",
       "price": "12",
-      "id": 1,
-      "bookings": [
-        {
-          "id": 1,
-          "firstname": "PS5"
-        }
-      ]
+      "id": 1
     },
     {
       "id": 2,
@@ -138,6 +132,13 @@
       "bookingDate": "2022-06-02",
       "bookingTime": "21:15",
       "id": 3
+    },
+    {
+      "clientEmail": "dummy@gmail.com",
+      "barberEmail": "tanjeks@gmail.com",
+      "bookingDate": "2022-06-20",
+      "bookingTime": "03:47",
+      "id": 4
     }
   ]
 }

@@ -161,7 +161,9 @@ const BarberDetails = () => {
   return (
     <>
       {modal}
-      {barber && <BarberCard {...barber} onClick={handleArrangeVisit} />}
+      {barber && (
+        <BarberCard animate {...barber} onClick={handleArrangeVisit} />
+      )}
     </>
   );
 };

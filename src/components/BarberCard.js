@@ -19,12 +19,17 @@ const BarberCard = (props) => {
     review,
     reviewamount,
     onClick,
+    animate,
   } = props;
 
   const location = useLocation();
 
   return (
-    <StyledBarberCard key={id} direction={id % 2 === 0 ? "row-reverse" : ""}>
+    <StyledBarberCard
+      key={id}
+      animate={animate}
+      direction={id % 2 === 0 ? "row-reverse" : ""}
+    >
       <img src={id % 2 === 0 ? harden1 : harden2} alt="harden" />
       <div>
         <h2>
