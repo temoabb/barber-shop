@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
 
-import useContextValues from '../hooks/useContextValues';
+import useContextValues from "../hooks/useContextValues";
 
 import {
   CLIENT_REGISTRATION_ATRRIBUTES,
@@ -39,7 +39,7 @@ export const useRegister = () => {
     }
 
     const gatheredData = {
-      ...(isBarber ? { review: 0, reviewamount: 0 } : "")
+      ...(isBarber ? { reviewssum: 0, reviewamount: 0, reviewedby: [] } : ""),
     };
 
     for (const value of Object.keys(allValues)) {
@@ -55,6 +55,8 @@ export const useRegister = () => {
     }
 
     delete gatheredData.confirmpassword;
+
+    console.log(gatheredData);
 
     const registerBarber = async () => {
       try {
@@ -106,7 +108,9 @@ export const useLogin = () => {
       try {
         const response = await axios.get(BASE_URL + "/clients");
 
-        const client = response.data.find(client => client.email === enteredEmail);
+        const client = response.data.find(
+          (client) => client.email === enteredEmail
+        );
 
         console.log("Found client", client);
 
@@ -118,17 +122,19 @@ export const useLogin = () => {
           return;
         }
 
-        localStorage.setItem("user", JSON.stringify({ email: client.email, loggedIn: true }));
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ email: client.email, loggedIn: true })
+        );
 
         activateUser({ loggedIn: true, email: client.email });
         navigate("/");
       } catch (error) {
         console.error(error);
       }
-    }
+    };
 
     authenticateUser();
-
   };
 
   return {
@@ -136,6 +142,6 @@ export const useLogin = () => {
     submitHandler,
     register,
     setError,
-    errors
-  }
+    errors,
+  };
 };

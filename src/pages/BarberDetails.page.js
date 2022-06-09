@@ -104,7 +104,7 @@ const BarberDetails = () => {
     </StyledVisitHeading>
   );
 
-  const registrationForm = (
+  const bookingForm = (
     <StyledModalForm onSubmit={handleSubmit(submitHandler)}>
       {bookingModalHeading}
       <StyledFormControl>
@@ -144,7 +144,7 @@ const BarberDetails = () => {
 
   const modal = showModal ? (
     <Modal onCloseModal={handleCloseModal}>
-      {!successfulBooking ? registrationForm : successfullyBookedMessage}
+      {!successfulBooking ? bookingForm : successfullyBookedMessage}
     </Modal>
   ) : (
     ""

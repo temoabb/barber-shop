@@ -1,7 +1,7 @@
 {
   "barbers": [
     {
-      "review": 0,
+      "reviewssum": 0,
       "reviewamount": 0,
       "email": "tanjeks@gmail.com",
       "password": "123",
@@ -9,136 +9,38 @@
       "lastname": "adasdsa",
       "address": "sdada",
       "price": "12",
-      "id": 1
+      "id": 1,
+      "reviewedby": []
     },
     {
-      "id": 2,
-      "firstname": "Barber",
-      "lastname": "Barberovich",
-      "address": "Z. Paliashvili 43 tbilisi, 0179",
-      "email": "barberovich@gmail.com",
-      "price": 30,
-      "review": 4.8,
-      "reviewamount": 123
-    },
-    {
-      "review": 0,
-      "reviewamount": 0,
-      "email": "tanjeks@gmail.com",
+      "reviewssum": 5,
+      "reviewamount": 1,
+      "reviewedby": [
+        "abesadzetemo1997@gmail.com"
+      ],
+      "email": "abesadzetemo1997@gmail.com",
       "password": "123",
-      "firstname": "Tanjeks",
-      "lastname": "Tanjeksovich",
-      "address": "Tchuatura",
-      "price": "30",
-      "id": 3
-    },
-    {
-      "review": 0,
-      "reviewamount": 0,
-      "email": "dsadas@dfsfd.com",
-      "password": "123",
-      "firstname": "Dasd",
-      "lastname": "sadasd",
-      "address": "adad",
-      "price": "123",
-      "id": 4
-    },
-    {
-      "review": 0,
-      "reviewamount": 0,
-      "email": "tanjeks@gmail.com",
-      "password": "123",
-      "firstname": "dasda",
-      "lastname": "adasdsa",
-      "address": "sdada",
-      "price": "12",
-      "id": 5
-    },
-    {
-      "review": 0,
-      "reviewamount": 0,
-      "email": "tanjeks@gmail.com",
-      "password": "123",
-      "firstname": "Tanjeks",
-      "lastname": "Tanjeksidze",
-      "address": "dsadasdsa",
-      "price": "23",
-      "id": 6
-    },
-    {
-      "review": 0,
-      "reviewamount": 0,
-      "email": "giorgi@gmail.com121",
-      "password": "123",
-      "firstname": "Vileni",
-      "lastname": "21",
-      "address": "dsads",
-      "price": "12",
-      "id": 7
-    },
-    {
-      "review": 0,
-      "reviewamount": 0,
-      "email": "topetchiatura@gmail.com",
-      "password": "topevar",
-      "firstname": "Tope",
-      "lastname": "Var",
-      "address": "Tchiatura brat",
-      "price": "400",
-      "id": 8
+      "firstname": "Temo",
+      "lastname": "Abesadze",
+      "address": "Javakheti St. Tbilisi",
+      "price": "50",
+      "id": 2
     }
   ],
   "clients": [
     {
-      "id": 1,
-      "email": "dummy@gmail.com",
-      "password": "123"
-    },
-    {
-      "email": "abesadzetemo1997@gmail.com",
-      "password": "123123",
-      "confirmpassword": "123123",
-      "id": 2
-    },
-    {
-      "email": "dsadas@gmail.com",
-      "password": "123",
-      "id": 3
-    },
-    {
       "email": "abesadzetemo1997@gmail.com",
       "password": "123",
-      "id": 4
+      "id": 1
     }
   ],
   "bookings": [
     {
-      "clientEmail": "dummy@gmail.com",
-      "barberEmail": "tanjeks@gmail.com",
-      "bookingDate": "2022-06-10",
-      "bookingTime": "20:37",
-      "id": 1
-    },
-    {
-      "clientEmail": "dummy@gmail.com",
-      "barberEmail": "tanjeks@gmail.com",
+      "clientEmail": "abesadzetemo1997@gmail.com",
+      "barberEmail": "abesadzetemo1997@gmail.com",
       "bookingDate": "2022-06-04",
-      "bookingTime": "20:57",
-      "id": 2
-    },
-    {
-      "clientEmail": "dummy@gmail.com",
-      "barberEmail": "dsadas@dfsfd.com",
-      "bookingDate": "2022-06-02",
-      "bookingTime": "21:15",
-      "id": 3
-    },
-    {
-      "clientEmail": "dummy@gmail.com",
-      "barberEmail": "tanjeks@gmail.com",
-      "bookingDate": "2022-06-20",
-      "bookingTime": "03:47",
-      "id": 4
+      "bookingTime": "17:37",
+      "id": 1
     }
   ]
 }
