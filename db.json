@@ -1,8 +1,8 @@
 {
   "barbers": [
     {
-      "reviewssum": 0,
-      "reviewamount": 0,
+      "reviewssum": 5,
+      "reviewamount": 1,
       "email": "tanjeks@gmail.com",
       "password": "123",
       "firstname": "dasda",
@@ -10,7 +10,9 @@
       "address": "sdada",
       "price": "12",
       "id": 1,
-      "reviewedby": []
+      "reviewedby": [
+        "tanjeks@gmail.com"
+      ]
     },
     {
       "reviewssum": 5,
@@ -41,6 +43,20 @@
       "bookingDate": "2022-06-04",
       "bookingTime": "17:37",
       "id": 1
+    },
+    {
+      "clientEmail": "abesadzetemo1997@gmail.com",
+      "barberEmail": "abesadzetemo1997@gmail.com",
+      "bookingDate": "2022-06-04",
+      "bookingTime": "21:19",
+      "id": 2
+    },
+    {
+      "clientEmail": "abesadzetemo1997@gmail.com",
+      "barberEmail": "tanjeks@gmail.com",
+      "bookingDate": "2022-06-30",
+      "bookingTime": "02:43",
+      "id": 3
     }
   ]
 }

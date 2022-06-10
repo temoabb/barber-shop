@@ -24,9 +24,12 @@ const Header = () => {
     <StyledHeader>
       <StyledContainer>
         <StyledNav>
-          <h1>
-            <Link to="/">BarberShop</Link>
-          </h1>
+          <div>
+            <h1>
+              <Link to="/">BarberShop</Link>
+            </h1>
+            {loggedIn && <Link to="/my-bookings">My bookings</Link>}
+          </div>
           <div>
             {email && <small>{email}</small>}
             <StyledButton onClick={authenticateClient}>

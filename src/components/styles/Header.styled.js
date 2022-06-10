@@ -15,10 +15,13 @@ export const StyledNav = styled.nav`
   & > div {
     display: flex;
     align-items: center;
+    gap: 10px;
   }
 
   & small {
     margin-right: 10px;
+    color: #009200;
+    font-weight: bold;
   }
 
   @media (max-width: 632px) {

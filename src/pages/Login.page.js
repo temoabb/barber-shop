@@ -52,7 +52,7 @@ const Login = () => {
       <small>
         Don't have an account? <Link to="/register">Register now</Link>
       </small>
-      <StyledButton bg="#90EE90" type="submit">
+      <StyledButton bg="#00FF83" color="#fff" type="submit">
         LOGIN
       </StyledButton>
     </StyledForm>

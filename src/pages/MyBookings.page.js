@@ -1,27 +1,28 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
 
-import useContextValues from "../hooks/useContextValues";
+import { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 
+import useContextValues from "../hooks/useContextValues";
+
 import { StyledButton } from "../components/styles/Button.styled";
-
 import { StyledBookingCard } from "../components/styles/BarberCard.styled";
-
 import { StyledModalForm } from "../components/styles/Modal.styled";
+
 import {
   StyledFormControl,
   StyledLabel,
 } from "../components/styles/Form.styled";
 
 import { useForm } from "react-hook-form";
+
 import Modal from "../components/Modal";
 
 const BOOKINGS_URL = "http://localhost:5000/bookings";
 const BARBERS_URL = "http://localhost:5000/barbers";
 
 function MyBookings() {
-  console.log("Mybookings");
+  console.log("Mybookings.page");
 
   const { email, loggedIn } = useContextValues();
 
@@ -59,7 +60,6 @@ function MyBookings() {
   const handleWriteReview = async () => {
     const barber = await axios.get(`${BARBERS_URL}?email=${barberEmail}`);
     const barberData = barber.data[0];
-    console.log(barberData);
 
     if (barberData.reviewedby.includes(barberEmail)) {
       setSuccessfullyReviewed(false);
@@ -82,10 +82,7 @@ function MyBookings() {
       barberEmail,
     ];
 
-    console.log(updatedBarberData);
-
     await axios.put(BARBERS_URL + `/${barberData.id}`, updatedBarberData);
-
     setSuccessfullyReviewed(true);
   };
 
