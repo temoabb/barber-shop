@@ -22,8 +22,6 @@ const BOOKINGS_URL = "http://localhost:5000/bookings";
 const BARBERS_URL = "http://localhost:5000/barbers";
 
 function MyBookings() {
-  console.log("Mybookings.page");
-
   const { email, loggedIn } = useContextValues();
 
   const {
@@ -60,8 +58,6 @@ function MyBookings() {
   const handleWriteReview = async () => {
     const barber = await axios.get(`${BARBERS_URL}?email=${barberEmail}`);
     const barberData = barber.data[0];
-
-    console.log(barberData);
 
     if (barberData.reviewedby.includes(email)) {
       setSuccessfullyReviewed(false);

@@ -8,10 +8,7 @@ import BarberCard from "../components/BarberCard";
 const API_URL = "http://localhost:5000/barbers";
 
 const BarbersList = () => {
-  console.log("BarbersList");
-
   const [barbers, setBarbers] = useState([]);
-  console.log(barbers);
 
   const navigate = useNavigate();
 

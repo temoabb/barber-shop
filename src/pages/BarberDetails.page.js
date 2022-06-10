@@ -26,8 +26,6 @@ const BARBERS_API_URL = "http://localhost:5000/barbers";
 const BOOKINGS_API_URL = "http://localhost:5000/bookings";
 
 const BarberDetails = () => {
-  console.log("BarberDetails");
-
   const { loggedIn, email: clientEmail } = useContextValues();
 
   const {
@@ -45,7 +43,6 @@ const BarberDetails = () => {
   const [successfulBooking, setSuccessfulBooking] = useState(false);
 
   useEffect(() => {
-    console.log("BarberDetails useEffect");
     const fetchBarber = async () => {
       try {
         const response = await axios.get(BARBERS_API_URL + `/${params.id}`);
@@ -61,7 +58,6 @@ const BarberDetails = () => {
 
   const submitHandler = () => {
     const values = getValues();
-    console.log("values", values);
 
     const createNewBooking = async () => {
       try {

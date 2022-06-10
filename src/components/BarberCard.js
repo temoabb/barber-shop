@@ -2,6 +2,8 @@ import React from "react";
 import { StyledBarberCard } from "./styles/BarberCard.styled";
 import { StyledButton } from "./styles/Button.styled";
 
+import RatingStars from "./RatingStars";
+
 import harden1 from "../assets/images/harden-1.jpg";
 import harden2 from "../assets/images/harden-2.jpg";
 
@@ -26,7 +28,6 @@ const BarberCard = (props) => {
 
   const rating =
     reviewamount === 0 ? 0 : Number((reviewssum / reviewamount).toFixed(1));
-  console.log({ rating });
 
   return (
     <StyledBarberCard
@@ -44,23 +45,16 @@ const BarberCard = (props) => {
             to={`/barbers/${id}`}
           >{`${firstname} ${lastname}`}</Link>
         </h2>
-
         {address && (
           <h4>
             <i>{address}</i>
           </h4>
         )}
-
         {hours && <small>Working hours: {hours}</small>}
-
         <h3>Price: GEL {price}</h3>
-
         {email && <p>Contact: {email}</p>}
-
-        <p>
-          Rating: {rating}/5 (reviewed by {reviewamount} reviewers)
-        </p>
-
+        Rating: {rating}/5 (reviewed by {reviewamount} reviewers)
+        <RatingStars rating={rating} />
         <StyledButton onClick={onClick} bg="#ff0099" color="#fff">
           {address && email ? "Reserve now" : "Details"}
         </StyledButton>

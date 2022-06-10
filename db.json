@@ -1,11 +1,14 @@
 {
   "barbers": [
     {
-      "reviewssum": 8,
-      "reviewamount": 2,
+      "reviewssum": 15,
+      "reviewamount": 5,
       "reviewedby": [
         "client1@gmail.com",
-        "client2@gmail.com"
+        "client2@gmail.com",
+        "client3@gmail.com",
+        "client4@gmail.com",
+        "client5@gmail.com"
       ],
       "email": "barber1@gmail.com",
       "password": "123",
@@ -16,11 +19,14 @@
       "id": 1
     },
     {
-      "reviewssum": 5,
-      "reviewamount": 2,
+      "reviewssum": 13,
+      "reviewamount": 5,
       "reviewedby": [
         "client1@gmail.com",
-        "client2@gmail.com"
+        "client2@gmail.com",
+        "client3@gmail.com",
+        "client4@gmail.com",
+        "client5@gmail.com"
       ],
       "email": "barber2@gmail.com",
       "password": "123",
@@ -41,6 +47,21 @@
       "email": "client2@gmail.com",
       "password": "123",
       "id": 2
+    },
+    {
+      "email": "client3@gmail.com",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "email": "client4@gmail.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "email": "client5@gmail.com",
+      "password": "123",
+      "id": 5
     }
   ],
   "bookings": [
@@ -78,6 +99,48 @@
       "bookingDate": "2022-06-15",
       "bookingTime": "15:54",
       "id": 5
+    },
+    {
+      "clientEmail": "client3@gmail.com",
+      "barberEmail": "barber1@gmail.com",
+      "bookingDate": "2022-06-02",
+      "bookingTime": "19:34",
+      "id": 6
+    },
+    {
+      "clientEmail": "client3@gmail.com",
+      "barberEmail": "barber2@gmail.com",
+      "bookingDate": "2022-06-15",
+      "bookingTime": "19:33",
+      "id": 7
+    },
+    {
+      "clientEmail": "client4@gmail.com",
+      "barberEmail": "barber2@gmail.com",
+      "bookingDate": "2022-06-01",
+      "bookingTime": "19:58",
+      "id": 8
+    },
+    {
+      "clientEmail": "client4@gmail.com",
+      "barberEmail": "barber1@gmail.com",
+      "bookingDate": "2022-06-14",
+      "bookingTime": "19:58",
+      "id": 9
+    },
+    {
+      "clientEmail": "client5@gmail.com",
+      "barberEmail": "barber1@gmail.com",
+      "bookingDate": "2022-06-02",
+      "bookingTime": "19:58",
+      "id": 10
+    },
+    {
+      "clientEmail": "client5@gmail.com",
+      "barberEmail": "barber2@gmail.com",
+      "bookingDate": "2022-06-01",
+      "bookingTime": "19:00",
+      "id": 11
     }
   ]
 }

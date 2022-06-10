@@ -32,7 +32,6 @@ export const useRegister = () => {
 
   const submitHandler = () => {
     const allValues = getValues();
-    console.log({ allValues });
 
     if (allValues.password !== allValues.confirmpassword) {
       setError("confirmpassword", { message: "Passwords DON'T match" });
@@ -56,8 +55,6 @@ export const useRegister = () => {
     }
 
     delete gatheredData.confirmpassword;
-
-    console.log(gatheredData);
 
     const registerBarber = async () => {
       try {
@@ -112,8 +109,6 @@ export const useLogin = () => {
         const client = response.data.find(
           (client) => client.email === enteredEmail
         );
-
-        console.log("Found client", client);
 
         if (!client) {
           setError("enteredEmail", { message: "Unknown email" });
