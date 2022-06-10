@@ -32,6 +32,7 @@ export const useRegister = () => {
 
   const submitHandler = () => {
     const allValues = getValues();
+    console.log({ allValues });
 
     if (allValues.password !== allValues.confirmpassword) {
       setError("confirmpassword", { message: "Passwords DON'T match" });

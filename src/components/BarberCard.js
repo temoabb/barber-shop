@@ -16,13 +16,17 @@ const BarberCard = (props) => {
     hours,
     email,
     price,
-    review,
+    reviewssum,
     reviewamount,
     onClick,
     animate,
   } = props;
 
   const location = useLocation();
+
+  const rating =
+    reviewamount === 0 ? 0 : Number((reviewssum / reviewamount).toFixed(1));
+  console.log({ rating });
 
   return (
     <StyledBarberCard
@@ -54,7 +58,7 @@ const BarberCard = (props) => {
         {email && <p>Contact: {email}</p>}
 
         <p>
-          Rating: {review}/5 (reviewed by {reviewamount} reviewers)
+          Rating: {rating}/5 (reviewed by {reviewamount} reviewers)
         </p>
 
         <StyledButton onClick={onClick} bg="#ff0099" color="#fff">
@@ -66,3 +70,13 @@ const BarberCard = (props) => {
 };
 
 export default BarberCard;
+
+//  {/* <div className="App">
+//         <i style={{ color: "yellow" }} className="fa-solid fa-star"></i>
+//         <i
+//           style={{ color: "yellow" }}
+//           className="fa-solid fa-star-half-stroke"
+//         ></i>
+//         <i style={{ color: "#EDF5FC" }} className="fa-solid fa-star"></i>
+//         barber-shop
+//       </div> */}

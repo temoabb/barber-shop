@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-// import useContextValues from "../hooks/useContextValues";
-
 import { useNavigate } from "react-router-dom";
 
 import BarberCard from "../components/BarberCard";
 
 const API_URL = "http://localhost:5000/barbers";
-
-// https://codepen.io/gaearon/pen/yzMaBd <-- portal
 
 const BarbersList = () => {
   console.log("BarbersList");
@@ -38,7 +34,7 @@ const BarbersList = () => {
       id={barber.id}
       firstname={barber.firstname}
       lastname={barber.lastname}
-      review={barber.review}
+      reviewssum={barber.reviewssum}
       price={barber.price}
       reviewamount={barber.reviewamount}
       onClick={() => navigate(`/barbers/${barber.id}`)}

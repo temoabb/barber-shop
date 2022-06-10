@@ -10,6 +10,8 @@ export const StyledBarberCard = styled.div`
   margin: 40px 0;
   padding: 60px;
 
+  flex-direction: ${({ direction }) => (direction ? direction : "row")};
+
   animation: ${({ animate }) =>
     animate ? "slide-down 300ms ease-out forwards" : ""};
 

@@ -1,62 +1,83 @@
 {
   "barbers": [
     {
-      "reviewssum": 5,
-      "reviewamount": 1,
-      "email": "tanjeks@gmail.com",
-      "password": "123",
-      "firstname": "dasda",
-      "lastname": "adasdsa",
-      "address": "sdada",
-      "price": "12",
-      "id": 1,
+      "reviewssum": 8,
+      "reviewamount": 2,
       "reviewedby": [
-        "tanjeks@gmail.com"
-      ]
+        "client1@gmail.com",
+        "client2@gmail.com"
+      ],
+      "email": "barber1@gmail.com",
+      "password": "123",
+      "firstname": "Barber 1",
+      "lastname": "Best",
+      "address": "Barber 1's office",
+      "price": "30",
+      "id": 1
     },
     {
       "reviewssum": 5,
-      "reviewamount": 1,
+      "reviewamount": 2,
       "reviewedby": [
-        "abesadzetemo1997@gmail.com"
+        "client1@gmail.com",
+        "client2@gmail.com"
       ],
-      "email": "abesadzetemo1997@gmail.com",
+      "email": "barber2@gmail.com",
       "password": "123",
-      "firstname": "Temo",
-      "lastname": "Abesadze",
-      "address": "Javakheti St. Tbilisi",
+      "firstname": "Barber 2",
+      "lastname": "Bestbarber",
+      "address": "Barber 2's office",
       "price": "50",
       "id": 2
     }
   ],
   "clients": [
     {
-      "email": "abesadzetemo1997@gmail.com",
+      "email": "client1@gmail.com",
       "password": "123",
       "id": 1
+    },
+    {
+      "email": "client2@gmail.com",
+      "password": "123",
+      "id": 2
     }
   ],
   "bookings": [
     {
-      "clientEmail": "abesadzetemo1997@gmail.com",
-      "barberEmail": "abesadzetemo1997@gmail.com",
-      "bookingDate": "2022-06-04",
-      "bookingTime": "17:37",
+      "clientEmail": "client1@gmail.com",
+      "barberEmail": "barber1@gmail.com",
+      "bookingDate": "2022-06-23",
+      "bookingTime": "15:48",
       "id": 1
     },
     {
-      "clientEmail": "abesadzetemo1997@gmail.com",
-      "barberEmail": "abesadzetemo1997@gmail.com",
-      "bookingDate": "2022-06-04",
-      "bookingTime": "21:19",
+      "clientEmail": "client1@gmail.com",
+      "barberEmail": "barber2@gmail.com",
+      "bookingDate": "2022-06-14",
+      "bookingTime": "15:49",
       "id": 2
     },
     {
-      "clientEmail": "abesadzetemo1997@gmail.com",
-      "barberEmail": "tanjeks@gmail.com",
-      "bookingDate": "2022-06-30",
-      "bookingTime": "02:43",
+      "clientEmail": "client2@gmail.com",
+      "barberEmail": "barber1@gmail.com",
+      "bookingDate": "2022-06-08",
+      "bookingTime": "18:49",
       "id": 3
+    },
+    {
+      "clientEmail": "client2@gmail.com",
+      "barberEmail": "barber1@gmail.com",
+      "bookingDate": "2022-06-15",
+      "bookingTime": "15:52",
+      "id": 4
+    },
+    {
+      "clientEmail": "client2@gmail.com",
+      "barberEmail": "barber2@gmail.com",
+      "bookingDate": "2022-06-15",
+      "bookingTime": "15:54",
+      "id": 5
     }
   ]
 }

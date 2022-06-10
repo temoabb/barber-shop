@@ -40,7 +40,7 @@ function MyBookings() {
 
   useEffect(() => {
     const fetchMyBookings = async () => {
-      const response = await axios.get(`${BOOKINGS_URL}?email=${email}`);
+      const response = await axios.get(`${BOOKINGS_URL}?clientEmail=${email}`);
       setMyBookings(response.data);
     };
 
@@ -61,7 +61,9 @@ function MyBookings() {
     const barber = await axios.get(`${BARBERS_URL}?email=${barberEmail}`);
     const barberData = barber.data[0];
 
-    if (barberData.reviewedby.includes(barberEmail)) {
+    console.log(barberData);
+
+    if (barberData.reviewedby.includes(email)) {
       setSuccessfullyReviewed(false);
       setBarberEmail("");
       return;
@@ -77,10 +79,7 @@ function MyBookings() {
     updatedBarberData.reviewssum = +previousReviewsSum + Number(review);
     updatedBarberData.reviewamount = +previousReviewAmount + 1;
 
-    updatedBarberData.reviewedby = [
-      ...updatedBarberData.reviewedby,
-      barberEmail,
-    ];
+    updatedBarberData.reviewedby = [...updatedBarberData.reviewedby, email];
 
     await axios.put(BARBERS_URL + `/${barberData.id}`, updatedBarberData);
     setSuccessfullyReviewed(true);

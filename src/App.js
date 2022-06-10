@@ -40,13 +40,3 @@ function App() {
 }
 
 export default App;
-
-//  {/* <div className="App">
-//         <i style={{ color: "yellow" }} className="fa-solid fa-star"></i>
-//         <i
-//           style={{ color: "yellow" }}
-//           className="fa-solid fa-star-half-stroke"
-//         ></i>
-//         <i style={{ color: "#EDF5FC" }} className="fa-solid fa-star"></i>
-//         barber-shop
-//       </div> */}
